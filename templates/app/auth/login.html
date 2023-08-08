@@ -1,0 +1,828 @@
+{% load static %}
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Login - An</title>
+    <!-- Load Favicon-->
+    <style type="text/css">
+      svg:not(:root).svg-inline--fa {
+        overflow: visible;
+      }
+
+      .svg-inline--fa {
+        display: inline-block;
+        font-size: inherit;
+        height: 1em;
+        overflow: visible;
+        vertical-align: -0.125em;
+      }
+      .svg-inline--fa.fa-lg {
+        vertical-align: -0.225em;
+      }
+      .svg-inline--fa.fa-w-1 {
+        width: 0.0625em;
+      }
+      .svg-inline--fa.fa-w-2 {
+        width: 0.125em;
+      }
+      .svg-inline--fa.fa-w-3 {
+        width: 0.1875em;
+      }
+      .svg-inline--fa.fa-w-4 {
+        width: 0.25em;
+      }
+      .svg-inline--fa.fa-w-5 {
+        width: 0.3125em;
+      }
+      .svg-inline--fa.fa-w-6 {
+        width: 0.375em;
+      }
+      .svg-inline--fa.fa-w-7 {
+        width: 0.4375em;
+      }
+      .svg-inline--fa.fa-w-8 {
+        width: 0.5em;
+      }
+      .svg-inline--fa.fa-w-9 {
+        width: 0.5625em;
+      }
+      .svg-inline--fa.fa-w-10 {
+        width: 0.625em;
+      }
+      .svg-inline--fa.fa-w-11 {
+        width: 0.6875em;
+      }
+      .svg-inline--fa.fa-w-12 {
+        width: 0.75em;
+      }
+      .svg-inline--fa.fa-w-13 {
+        width: 0.8125em;
+      }
+      .svg-inline--fa.fa-w-14 {
+        width: 0.875em;
+      }
+      .svg-inline--fa.fa-w-15 {
+        width: 0.9375em;
+      }
+      .svg-inline--fa.fa-w-16 {
+        width: 1em;
+      }
+      .svg-inline--fa.fa-w-17 {
+        width: 1.0625em;
+      }
+      .svg-inline--fa.fa-w-18 {
+        width: 1.125em;
+      }
+      .svg-inline--fa.fa-w-19 {
+        width: 1.1875em;
+      }
+      .svg-inline--fa.fa-w-20 {
+        width: 1.25em;
+      }
+      .svg-inline--fa.fa-pull-left {
+        margin-right: 0.3em;
+        width: auto;
+      }
+      .svg-inline--fa.fa-pull-right {
+        margin-left: 0.3em;
+        width: auto;
+      }
+      .svg-inline--fa.fa-border {
+        height: 1.5em;
+      }
+      .svg-inline--fa.fa-li {
+        width: 2em;
+      }
+      .svg-inline--fa.fa-fw {
+        width: 1.25em;
+      }
+
+      .fa-layers svg.svg-inline--fa {
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+
+      .fa-layers {
+        display: inline-block;
+        height: 1em;
+        position: relative;
+        text-align: center;
+        vertical-align: -0.125em;
+        width: 1em;
+      }
+      .fa-layers svg.svg-inline--fa {
+        -webkit-transform-origin: center center;
+        transform-origin: center center;
+      }
+
+      .fa-layers-counter,
+      .fa-layers-text {
+        display: inline-block;
+        position: absolute;
+        text-align: center;
+      }
+
+      .fa-layers-text {
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        -webkit-transform-origin: center center;
+        transform-origin: center center;
+      }
+
+      .fa-layers-counter {
+        background-color: #ff253a;
+        border-radius: 1em;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        color: #fff;
+        height: 1.5em;
+        line-height: 1;
+        max-width: 5em;
+        min-width: 1.5em;
+        overflow: hidden;
+        padding: 0.25em;
+        right: 0;
+        text-overflow: ellipsis;
+        top: 0;
+        -webkit-transform: scale(0.25);
+        transform: scale(0.25);
+        -webkit-transform-origin: top right;
+        transform-origin: top right;
+      }
+
+      .fa-layers-bottom-right {
+        bottom: 0;
+        right: 0;
+        top: auto;
+        -webkit-transform: scale(0.25);
+        transform: scale(0.25);
+        -webkit-transform-origin: bottom right;
+        transform-origin: bottom right;
+      }
+
+      .fa-layers-bottom-left {
+        bottom: 0;
+        left: 0;
+        right: auto;
+        top: auto;
+        -webkit-transform: scale(0.25);
+        transform: scale(0.25);
+        -webkit-transform-origin: bottom left;
+        transform-origin: bottom left;
+      }
+
+      .fa-layers-top-right {
+        right: 0;
+        top: 0;
+        -webkit-transform: scale(0.25);
+        transform: scale(0.25);
+        -webkit-transform-origin: top right;
+        transform-origin: top right;
+      }
+
+      .fa-layers-top-left {
+        left: 0;
+        right: auto;
+        top: 0;
+        -webkit-transform: scale(0.25);
+        transform: scale(0.25);
+        -webkit-transform-origin: top left;
+        transform-origin: top left;
+      }
+
+      .fa-lg {
+        font-size: 1.3333333333em;
+        line-height: 0.75em;
+        vertical-align: -0.0667em;
+      }
+
+      .fa-xs {
+        font-size: 0.75em;
+      }
+
+      .fa-sm {
+        font-size: 0.875em;
+      }
+
+      .fa-1x {
+        font-size: 1em;
+      }
+
+      .fa-2x {
+        font-size: 2em;
+      }
+
+      .fa-3x {
+        font-size: 3em;
+      }
+
+      .fa-4x {
+        font-size: 4em;
+      }
+
+      .fa-5x {
+        font-size: 5em;
+      }
+
+      .fa-6x {
+        font-size: 6em;
+      }
+
+      .fa-7x {
+        font-size: 7em;
+      }
+
+      .fa-8x {
+        font-size: 8em;
+      }
+
+      .fa-9x {
+        font-size: 9em;
+      }
+
+      .fa-10x {
+        font-size: 10em;
+      }
+
+      .fa-fw {
+        text-align: center;
+        width: 1.25em;
+      }
+
+      .fa-ul {
+        list-style-type: none;
+        margin-left: 2.5em;
+        padding-left: 0;
+      }
+      .fa-ul > li {
+        position: relative;
+      }
+
+      .fa-li {
+        left: -2em;
+        position: absolute;
+        text-align: center;
+        width: 2em;
+        line-height: inherit;
+      }
+
+      .fa-border {
+        border: solid 0.08em #eee;
+        border-radius: 0.1em;
+        padding: 0.2em 0.25em 0.15em;
+      }
+
+      .fa-pull-left {
+        float: left;
+      }
+
+      .fa-pull-right {
+        float: right;
+      }
+
+      .fa.fa-pull-left,
+      .fas.fa-pull-left,
+      .far.fa-pull-left,
+      .fal.fa-pull-left,
+      .fab.fa-pull-left {
+        margin-right: 0.3em;
+      }
+      .fa.fa-pull-right,
+      .fas.fa-pull-right,
+      .far.fa-pull-right,
+      .fal.fa-pull-right,
+      .fab.fa-pull-right {
+        margin-left: 0.3em;
+      }
+
+      .fa-spin {
+        -webkit-animation: fa-spin 2s infinite linear;
+        animation: fa-spin 2s infinite linear;
+      }
+
+      .fa-pulse {
+        -webkit-animation: fa-spin 1s infinite steps(8);
+        animation: fa-spin 1s infinite steps(8);
+      }
+
+      @-webkit-keyframes fa-spin {
+        0% {
+          -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes fa-spin {
+        0% {
+          -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+      .fa-rotate-90 {
+        -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+      }
+
+      .fa-rotate-180 {
+        -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+      }
+
+      .fa-rotate-270 {
+        -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
+        -webkit-transform: rotate(270deg);
+        transform: rotate(270deg);
+      }
+
+      .fa-flip-horizontal {
+        -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
+        -webkit-transform: scale(-1, 1);
+        transform: scale(-1, 1);
+      }
+
+      .fa-flip-vertical {
+        -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
+        -webkit-transform: scale(1, -1);
+        transform: scale(1, -1);
+      }
+
+      .fa-flip-both,
+      .fa-flip-horizontal.fa-flip-vertical {
+        -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
+        -webkit-transform: scale(-1, -1);
+        transform: scale(-1, -1);
+      }
+
+      :root .fa-rotate-90,
+      :root .fa-rotate-180,
+      :root .fa-rotate-270,
+      :root .fa-flip-horizontal,
+      :root .fa-flip-vertical,
+      :root .fa-flip-both {
+        -webkit-filter: none;
+        filter: none;
+      }
+
+      .fa-stack {
+        display: inline-block;
+        height: 2em;
+        position: relative;
+        width: 2.5em;
+      }
+
+      .fa-stack-1x,
+      .fa-stack-2x {
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+
+      .svg-inline--fa.fa-stack-1x {
+        height: 1em;
+        width: 1.25em;
+      }
+      .svg-inline--fa.fa-stack-2x {
+        height: 2em;
+        width: 2.5em;
+      }
+
+      .fa-inverse {
+        color: #fff;
+      }
+
+      .sr-only {
+        border: 0;
+        clip: rect(0, 0, 0, 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+      }
+
+      .sr-only-focusable:active,
+      .sr-only-focusable:focus {
+        clip: auto;
+        height: auto;
+        margin: 0;
+        overflow: visible;
+        position: static;
+        width: auto;
+      }
+
+      .svg-inline--fa .fa-primary {
+        fill: var(--fa-primary-color, currentColor);
+        opacity: 1;
+        opacity: var(--fa-primary-opacity, 1);
+      }
+
+      .svg-inline--fa .fa-secondary {
+        fill: var(--fa-secondary-color, currentColor);
+        opacity: 0.4;
+        opacity: var(--fa-secondary-opacity, 0.4);
+      }
+
+      .svg-inline--fa.fa-swap-opacity .fa-primary {
+        opacity: 0.4;
+        opacity: var(--fa-secondary-opacity, 0.4);
+      }
+
+      .svg-inline--fa.fa-swap-opacity .fa-secondary {
+        opacity: 1;
+        opacity: var(--fa-primary-opacity, 1);
+      }
+
+      .svg-inline--fa mask .fa-primary,
+      .svg-inline--fa mask .fa-secondary {
+        fill: black;
+      }
+
+      .fad.fa-inverse {
+        color: #fff;
+      }
+    </style>
+    <link
+      href="assets/img/favicon.ico"
+      rel="shortcut icon"
+      type="image/x-icon"
+    />
+    <!-- Load Material Icons from Google Fonts-->
+    <link
+      href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+      rel="stylesheet"
+    />
+    <!-- Roboto and Roboto Mono fonts from Google Fonts-->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500"
+      rel="stylesheet"
+    />
+    <!-- Load main stylesheet-->
+    <link href="css/styles.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="{% static 'asset/css/styles.css' %}"
+      media="all"
+    />
+    <style>
+      .btn-customizer[_ngcontent-orc-c10] {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 0.35rem;
+        font-size: 0.85rem;
+        padding: 1rem;
+        outline: 0;
+        margin-bottom: 0.5rem;
+      }
+      .btn-customizer[_ngcontent-orc-c10] svg[_ngcontent-orc-c10] {
+        visibility: hidden;
+      }
+      .btn-customizer[_ngcontent-orc-c10]:focus {
+        font-weight: 700;
+        box-shadow: 0 0 0 0.125rem #d7dce3;
+      }
+      .btn-customizer[_ngcontent-orc-c10]:focus svg[_ngcontent-orc-c10] {
+        visibility: visible;
+      }
+      .sb-customizer-btn-export[_ngcontent-orc-c10] {
+        font-size: 0.85rem;
+        padding: 1rem;
+      }
+      .sb-customizer-btn-export[_ngcontent-orc-c10]
+        .ng-fa-icon[_ngcontent-orc-c10] {
+        margin-right: 0.25rem;
+      }
+      .sb-customizer[_ngcontent-orc-c10] {
+        z-index: 9999;
+        position: fixed;
+        top: 0;
+        width: 20rem;
+        height: 100vh;
+        text-align: left;
+        background: #fff;
+        transition: right 0.5s;
+        box-shadow: -0.15rem 0 1.75rem 0 rgba(34, 39, 46, 0.15);
+      }
+      .sb-customizer[_ngcontent-orc-c10]
+        .sb-customizer-heading[_ngcontent-orc-c10] {
+        padding: 1.5rem;
+        font-size: 0.7rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: #a7aeb8;
+      }
+      .sb-customizer[_ngcontent-orc-c10]
+        .sb-customizer-subheading[_ngcontent-orc-c10] {
+        font-size: 0.8rem;
+        font-style: italic;
+        color: #6c737d;
+        margin-bottom: 0.75rem;
+      }
+      .sb-customizer[_ngcontent-orc-c10]
+        .sb-customizer-toggler[_ngcontent-orc-c10] {
+        position: absolute;
+        top: 4.625rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        left: -3rem;
+        width: 3rem;
+        height: 3rem;
+        border-top-left-radius: 0.35rem;
+        border-bottom-left-radius: 0.35rem;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border: 0;
+        box-shadow: 0 0.15rem 1.75rem 0 rgba(34, 39, 46, 0.15);
+        color: #001500;
+        background-color: #fff;
+      }
+      .sb-customizer[_ngcontent-orc-c10]
+        .sb-customizer-toggler[_ngcontent-orc-c10]:focus {
+        outline: none;
+      }
+      .sb-customizer[_ngcontent-orc-c10]
+        .sb-customizer-content[_ngcontent-orc-c10] {
+        position: relative;
+        height: calc(100% - 64px);
+        overflow-y: auto;
+        padding: 1.5rem;
+      }
+      .sb-customizer[_ngcontent-orc-c10]
+        .sb-customizer-content[_ngcontent-orc-c10]::-webkit-scrollbar {
+        display: block;
+        width: 0.5rem;
+      }
+      .sb-customizer[_ngcontent-orc-c10]
+        .sb-customizer-content[_ngcontent-orc-c10]::-webkit-scrollbar-thumb {
+        background-color: #c7cdd6;
+        border-radius: 10rem;
+        height: 3em;
+        border: 0.1rem solid transparent;
+        background-clip: padding-box;
+      }
+      .sb-customizer[_ngcontent-orc-c10]
+        .sb-customizer-content[_ngcontent-orc-c10]::-webkit-scrollbar-track {
+        background-color: rgba(34, 39, 46, 0.05);
+      }
+      .sb-customizer[_ngcontent-orc-c10]
+        .sb-customizer-content[_ngcontent-orc-c10]::-webkit-scrollbar-button {
+        width: 0;
+        height: 0;
+        display: none;
+      }
+      .sb-customizer[_ngcontent-orc-c10]
+        .sb-customizer-content[_ngcontent-orc-c10]::-webkit-scrollbar-corner {
+        background-color: transparent;
+      }
+      .sb-customizer[_ngcontent-orc-c10]
+        .sb-customizer-content[_ngcontent-orc-c10]:hover::-webkit-scrollbar {
+        display: block;
+      }
+      .sb-customizer.sb-customizer-closed[_ngcontent-orc-c10] {
+        right: -20rem;
+      }
+      .sb-customizer.sb-customizer-open[_ngcontent-orc-c10] {
+        right: 0;
+      }
+      .swatch[_ngcontent-orc-c10] {
+        border: 0;
+      }
+      #swatch1[_ngcontent-orc-c10] .swatch[_ngcontent-orc-c10] {
+        color: #fff;
+        background-color: #0061f2;
+        background-image: linear-gradient(45deg, #0061f2, #6900c7);
+      }
+      #swatch2[_ngcontent-orc-c10] .swatch[_ngcontent-orc-c10] {
+        color: #fff;
+        background-color: #1da1f5;
+        background-image: linear-gradient(45deg, #1da1f5, #8039da);
+      }
+      #swatch3[_ngcontent-orc-c10] .swatch[_ngcontent-orc-c10] {
+        color: #fff;
+        background-color: #f53b57;
+        background-image: linear-gradient(45deg, #f53b57, #ff793f);
+      }
+      #swatch4[_ngcontent-orc-c10] .swatch[_ngcontent-orc-c10] {
+        color: #fff;
+        background-color: #6eabc2;
+        background-image: linear-gradient(45deg, #6eabc2, #506c6a);
+      }
+      #swatch5[_ngcontent-orc-c10] .swatch[_ngcontent-orc-c10] {
+        color: #fff;
+        background-color: #06794f;
+        background-image: linear-gradient(45deg, #06794f, #0fa28b);
+      }
+      .sb-customizer-notice[_ngcontent-orc-c10] {
+        line-height: 1.1;
+        font-style: italic;
+      }
+      .pronto-swatch[_ngcontent-orc-c10] {
+        height: 2.5rem;
+        width: 2.5rem;
+        border-radius: 100%;
+        overflow: hidden;
+        display: inline-flex;
+        flex-shrink: 0;
+        cursor: pointer;
+        border: 0.125rem solid transparent;
+      }
+      .pronto-swatch[_ngcontent-orc-c10]
+        .pronto-swatch-colors[_ngcontent-orc-c10] {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        transform: rotate(45deg);
+      }
+      .pronto-swatch[_ngcontent-orc-c10]
+        .pronto-swatch-colors[_ngcontent-orc-c10]
+        .pronto-swatch-primary[_ngcontent-orc-c10],
+      .pronto-swatch[_ngcontent-orc-c10]
+        .pronto-swatch-colors[_ngcontent-orc-c10]
+        .pronto-swatch-secondary[_ngcontent-orc-c10] {
+        height: 100%;
+        width: 50%;
+      }
+      .pronto-swatch[_ngcontent-orc-c10]
+        .pronto-swatch-colors[_ngcontent-orc-c10]
+        .pronto-swatch-primary[_ngcontent-orc-c10] {
+        background-color: #1abc9c;
+      }
+      .pronto-swatch[_ngcontent-orc-c10]
+        .pronto-swatch-colors[_ngcontent-orc-c10]
+        .pronto-swatch-secondary[_ngcontent-orc-c10] {
+        background-color: #2c3e50;
+      }
+      .pronto-swatch.selected[_ngcontent-orc-c10],
+      .pronto-swatch.selected[_ngcontent-orc-c10]:active,
+      .pronto-swatch.selected[_ngcontent-orc-c10]:focus {
+        box-shadow: 0 0 0 0.4rem rgba(0, 21, 0, 0.5);
+      }
+      .pronto-swatch[_ngcontent-orc-c10]:active,
+      .pronto-swatch[_ngcontent-orc-c10]:focus {
+        box-shadow: 0 0 0 0.4rem rgba(0, 21, 0, 0.25);
+      }
+      .pronto-swatch[_ngcontent-orc-c10]:focus {
+        outline: none;
+      }
+    </style>
+  </head>
+  <body class="bg-pattern-waihou">
+    <!-- Layout wrapper-->
+    <div id="layoutAuthentication">
+      <!-- Layout content-->
+      <div id="layoutAuthentication_content">
+        <!-- Main page content-->
+        <main>
+          <!-- Main content container-->
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-md-4">
+                <div class="card card-raised shadow-10 mt-5 mt-xl-10 mb-4" style="background: rgb(239, 242, 251);">
+                  <div class="row g-0">
+                    <div class="col-md-12">
+                        <div class="card-body p-5">
+                            <!-- Auth header with logo image-->
+                            <div class="text-center">
+                                <a href="/">
+                                    <img
+                                        class="mb-3"
+                                        src="{% static 'asset/img/background.svg' %}"
+                                        alt="..."
+                                        style="height: 48px"
+                                    />
+                                </a>
+                            
+                            <h1 class="display-5 mb-0">Login</h1>
+                            <div class="subheading-1 mb-5">
+                                to Get Access
+                            </div>
+                            </div>
+                            <!-- Login submission form-->
+                            <form
+                            class="mb-5"
+                            action="{% url 'doLogin' %}"
+                            method="POST"
+                            >
+                            {% comment %} Display Messages {% endcomment %} 
+                            {% if messages %}
+                            <div class="col-12">
+                                {% for message in messages %} 
+                                {% if message.tags == "error" %}
+                                <div class="alert alert-danger" role="alert">
+                                {{ message }}
+                                </div>
+
+                                {% elif message.tags == "success" %}
+                                <div class="alert alert-success" role="alert">
+                                {{ message }}
+                                </div>
+
+                                {% endif %} 
+                                {% endfor %}
+                            </div>
+                            {% endif %} 
+                            {% csrf_token %}
+                            <div class="mb-4">
+                                <mwc-textfield
+                                class="w-100"
+                                label="Phone number:"
+                                name="username"
+                                placeholder="e.g 0775686926 "
+                                required
+                                outlined=""
+                                ></mwc-textfield>
+                            </div>
+                            <div class="mb-4">
+                                <mwc-textfield
+                                name="password"
+                                placeholder="******* "
+                                required
+                                class="w-100"
+                                label="Password"
+                                outlined=""
+                                type="password"
+                                ></mwc-textfield>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <mwc-formfield label="Remember password"
+                                ><mwc-checkbox name="" checked=""></mwc-checkbox
+                                ></mwc-formfield>
+                            </div>
+                            <div
+                                class="form-group d-flex align-items-center justify-content-between mt-4 mb-0"
+                            >
+                                <a
+                                class="small fw-500 text-decoration-none"
+                                href="#"
+                                >Forgot Password?</a
+                                >
+                                <button
+                                class="btn btn-primary mdc-ripple-upgraded"
+                                type="submit"
+                                >
+                                Login
+                                </button>
+                            </div>
+                            </form>
+                            <!-- Auth card message-->
+                            <div class="text-center">
+                            
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Background image column using inline CSS-->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+      <!-- Layout footer-->
+      <div id="layoutAuthentication_footer"></div>
+    </div>
+    <!-- Load Bootstrap JS bundle-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Load global scripts-->
+    <script type="module" src="js/material.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="{% static 'asset/js/material.js' %}"></script>
+  </body>
+</html>

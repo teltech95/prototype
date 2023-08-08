@@ -1,0 +1,210 @@
+{% extends 'app/partial/layout.html' %} 
+{% block title %}farmers {% endblock%} {% block content %}
+
+<main>
+  <!-- Page header-->
+  <header class="bg-info">
+    <div class="container-xl px-5">
+      <h1 class="text-white py-3 mb-0 display-6">Manage farmers</h1>
+    </div>
+  </header>
+  <!-- Main dashboard content-->
+  <div class="container-xl p-5">
+    <div class="d-flex justify-content-between align-items-end">
+      <h2 class="display-6 mb-0"></h2>
+      <div class="text-end mb-3">
+        <a
+          data-bs-toggle="modal"
+          data-bs-target="#addFarmer"
+          class="btn btn-success mdc-ripple-upgraded"
+          href="#"
+          >Add user
+        </a>
+      </div>
+    </div>
+    <div class="modal fade" id="addFarmer" tabindex="-1"
+    aria-labelledby="exampleModalStaticLabel" aria-hidden="true"
+    data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add farmer</h5>
+          <button
+            class="btn-close"
+            type="button"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <form action="#" method="POST">
+            <div class="mb-3">
+                <label for="">Farmer:</label>
+                <select
+                class="form-select"
+                aria-label="Default select example"
+                name="user_type"
+                >
+                <option selected>farmer</option>
+                <option value="2">farmer 1</option>
+                <option value="3">farrmer 2</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="">Plot history:</label>
+                <select
+                class="form-select"
+                aria-label="Default select example"
+                name="user_type"
+                >
+                <option selected>select</option>
+                <option value="2">farmer  history 1</option>
+                <option value="3">farrmer history 2</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="">Test Level/Group:</label>
+                <select
+                class="form-select"
+                aria-label="Default select example"
+                name="user_type"
+                >
+                <option selected>select</option>
+                <option value="2">level 1</option>
+                <option value="3">level 2</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="">Sample Size:</label>
+                <input type="text" class="form-control" name="sample_size" />
+            </div>
+            <div class="mb-3">
+                <label for="">Reading:</label>
+                <input type="text" class="form-control" name="reading" />
+            </div>
+            
+            {% csrf_token %}
+
+            <div class="d-flex flex-row-reverse">
+              <button
+                class="btn btn-text-primary me-2"
+                type="button"
+                data-bs-dismiss="modal"
+              >
+                Cancel
+              </button>
+              <button class="btn btn-text-primary" type="submit">Save</button>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer"></div>
+      </div>
+    </div>
+  </div>
+  <div class="row gx-5">
+    <!-- Projects column-->
+    <div class="col-xl-12 col-lg-12 mb-5">
+      <div class="card card-raised mb-5">
+        <div class="card-header bg-transparent px-4">
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="me-4">
+              <h2 class="display-6 mb-0">Farmers</h2>
+              <div class="card-text">Farmer list</div>
+            </div>
+            <div class="d-flex gap-2"></div>
+          </div>
+        </div>
+        <div class="card-body p-4">
+          <!-- Simple DataTables example-->
+          <div
+            class="datatable-wrapper datatable-loading no-footer sortable searchable fixed-columns search-results"
+          >
+            <div class="">
+              <form action="" method="GET">
+                <div class="mb-3 row">
+                  <div class="col-sm-10">
+                    <input
+                      class="datatable-input form-control"
+                      placeholder="Search by name..."
+                      type="search"
+                      title="Search within table"
+                      aria-controls="datatablesSimple"
+                      value="{{search_query}}"
+                      name="search_query"
+                    />
+                  </div>
+                  <div class="col-sm-2">
+                    <button type="submit" class="btn btn-primary form-control">
+                      search
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="datatable-container">
+              <table id="datatablesSimple" class="datatable-table">
+                <thead
+                  style="
+                    font-size: 12px;
+                    background-color: #0063b2;
+                    color: #fff;
+                  "
+                >
+                  <tr>
+                    <th data-sortable="true" style="width: 15.268215417106653%">
+                      <a href="#" class="datatable-sorter">Farmer</a>
+                    </th>
+                    <th
+                      data-sortable="true"
+                      aria-sort="ascending"
+                      class="datatable-ascending"
+                      style="width: 12.522703273495248%"
+                    >
+                      <a href="#" class="datatable-sorter">District </a>
+                    </th>
+                    <th
+                      data-sortable="true"
+                      aria-sort="ascending"
+                      class="datatable-ascending"
+                      style="width: 10.522703273495248%"
+                    >
+                      <a href="#" class="datatable-sorter">Sample Size </a>
+                    </th>
+                    <th data-sortable="true" style="width: 15.46145723336853%">
+                      <a href="#" class="datatable-sorter">Group/Level</a>
+                    </th>
+                    <th data-sortable="true" style="width: 15.125659978880677%">
+                      <a href="#" class="datatable-sorter">Rading</a>
+                    </th>
+                    <th data-sortable="true" style="width: 13.621964097148892%">
+                      <a href="#" class="datatable-sorter">Result</a>
+                    </th>
+
+                    <th data-sortable="true" style="width: 10.125659978880677%">
+                      <a href="#" class="datatable-sorter">Approved</a>
+                    </th>
+
+                    <th data-sortable="true" style="width: 23.621964097148892%">
+                      <a href="#" class="datatable-sorter">createdAt</a>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+              </table>
+            </div>
+            <div class="datatable-bottom">
+              <div class="datatable-info"></div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Checklist column-->
+  </div>
+</main>
+
+{% endblock %} 
+{% block scripts %} {% endblock %}

@@ -1,0 +1,398 @@
+{% extends 'app/partial/layout.html' %}
+{% block title %}Dashboard {% endblock %}
+{% block content %}
+
+<main>
+    <!-- Main dashboard content-->
+    <div class="container-xl p-5">
+        <div class="row justify-content-between
+            align-items-center mb-5">
+            <div class="col flex-shrink-0 mb-5 mb-md-0">
+                <h1 class="display-4 mb-0">Dashboard</h1>
+                <div class="text-muted">Overview &amp;
+                    summary</div>
+            </div>
+            <div class="col-12 col-md-auto">
+                
+            </div>
+        </div>
+        <!-- Colored status cards-->
+        <div class="row gx-5">
+            <div class="col-xxl-3 col-md-6 mb-5">
+                <div class="card card-raised border-start
+                    border-primary border-4">
+                    <div class="card-body px-4">
+                        <div class="d-flex
+                            justify-content-between
+                            align-items-center mb-2">
+                            <div class="me-2">
+                                <div class="display-5">{{total_users}}</div>
+                                <div class="card-text">
+                                    <a class="small stretched-link text-reset text-decoration-none" href="#">Total Users</a>
+                                </div>
+                            </div>
+                            <div class="icon-circle bg-primary
+                                text-white"><i
+                                    class="material-icons">group_add</i></div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-xxl-3 col-md-6 mb-5">
+                <div class="card card-raised border-start
+                    border-warning border-4">
+                    <div class="card-body px-4">
+                        <div class="d-flex
+                            justify-content-between
+                            align-items-center mb-2">
+                            <div class="me-2">
+                                <div class="display-5">{{0}}</div>
+                                <div class="card-text">
+                                    <a class="small stretched-link text-reset text-decoration-none" href="#">Total Farmers</a>
+                                </div>
+                            </div>
+                            <div class="icon-circle bg-warning
+                                text-white"><i
+                                    class="material-icons">people</i></div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-xxl-3 col-md-6 mb-5">
+                <div class="card card-raised border-start
+                    border-secondary border-4">
+                    <div class="card-body px-4">
+                        <div class="d-flex
+                            justify-content-between
+                            align-items-center mb-2">
+                            <div class="me-2">
+                                <div class="display-5">{{0}}</div>
+                                <div class="card-text">
+                                    <a class="small stretched-link text-reset text-decoration-none" href="#">Tested Samples</a>
+                                    
+                                </div>
+                            </div>
+                            <div class="icon-circle bg-secondary
+                                text-white"><i
+                                    class="material-icons">policy</i></div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-xxl-3 col-md-6 mb-5">
+                <div class="card card-raised border-start
+                    border-info border-4">
+                    <div class="card-body px-4">
+                        <div class="d-flex
+                            justify-content-between
+                            align-items-center mb-2">
+                            <div class="me-2">
+                                <div class="display-5">{{pending_claims}}</div>
+                                <div class="card-text">
+                                    <a class="small stretched-link text-reset text-decoration-none" href="#">Pending </a>
+                                    
+                                </div>
+                            </div>
+                            <div class="icon-circle bg-info
+                                text-white"><i
+                                    class="material-icons">help</i></div>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+            <div class="row gx-5">
+                <!-- Projects column-->
+                <div class="col-xl-12 col-lg-12 mb-5">
+                    <div class="card card-raised mb-5">
+                        <div class="card-header bg-transparent px-4">
+                            <div class="d-flex justify-content-between
+                                align-items-center">
+                                <div class="me-4">
+                                    <h2 class="display-6 mb-0">Sample</h2>
+                                    <div class="card-text">Tested Sample</div>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    
+                                   
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body p-4">
+                            <!-- Simple DataTables example-->
+                            <div class="datatable-wrapper datatable-loading
+                                no-footer sortable searchable fixed-columns
+                                search-results">
+                                <div class="">
+                                    <form action="" method="GET">
+                                        <div class="mb-3 row">
+                                            <div class="col-sm-10">
+                                                <input class="datatable-input form-control"
+                                                placeholder="Search by name..." type="search"
+                                                title="Search within table"
+                                                aria-controls="datatablesSimple"
+                                                value="{{search_query}}"
+                                                name="search_query">
+                                            </div>
+                                            <div class="col-sm-2 ">
+                                                <button type="submit" class="btn btn-primary form-control ">search</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="datatable-container">
+                                    <table id="datatablesSimple"
+                                        class="datatable-table">
+                                        <thead style="font-size: 12px; background-color: #0063b2; color: #fff;">
+                                            <tr  >
+                                                <th data-sortable="true"
+                                                    style="width:
+                                                    15.268215417106653%;"><a
+                                                        href="#"
+                                                        class="datatable-sorter">Farmer</a></th>
+                                                <th data-sortable="true"
+                                                        aria-sort="ascending"
+                                                        class="datatable-ascending"
+                                                        style="width:
+                                                        12.522703273495248%;"><a
+                                                            href="#"
+                                                            class="datatable-sorter">District
+                                                            </a></th>
+                                                <th data-sortable="true"
+                                                    aria-sort="ascending"
+                                                    class="datatable-ascending"
+                                                    style="width:
+                                                    10.522703273495248%;"><a
+                                                        href="#"
+                                                        class="datatable-sorter">Sample Size
+                                                        </a></th>
+                                                <th data-sortable="true"
+                                                    style="width:
+                                                    15.46145723336853%;"><a href="#"
+                                                        class="datatable-sorter">Group/Level</a></th>
+                                                <th data-sortable="true"
+                                                        style="width:
+                                                        15.125659978880677%;"><a
+                                                            href="#"
+                                                            class="datatable-sorter">Rading</a></th>
+                                                <th data-sortable="true"
+                                                    style="width:
+                                                    13.621964097148892%;"><a
+                                                        href="#"
+                                                        class="datatable-sorter">Result</a></th>
+    
+                                                <th data-sortable="true"
+                                                    style="width:
+                                                    10.125659978880677%;"><a
+                                                        href="#"
+                                                        class="datatable-sorter">Approved</a></th>
+    
+                                                <th data-sortable="true"
+                                                        style="width:
+                                                        23.621964097148892%;"><a
+                                                            href="#"
+                                                            class="datatable-sorter">createdAt</a></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                           {% for user in users %}
+                                            <tr data-index="3" style="font-size: 12px;">
+                                                <td><a href="#">{{user.phone}}</a></td>
+    
+                                                <td>{{user.first_name}} {{user.last_name}}</td>
+                                                {% if user.user_type == 1 %}
+                                                <td><span class="" title="click to update"  data-bs-toggle="modal" data-bs-target="#updateRoleClient{{user.id}}">Client</span></td>
+                                                 <!-- Modal-->
+                                                <div class="modal fade" id="updateRoleClient{{user.id}}" tabindex="-1" aria-labelledby="exampleModalStaticLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+                                                    <div class="modal-dialog modal-dialog-centered">
+                                                    
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="exampleModalLabel">Change user role</h5>
+                                                                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                </div>
+                                                                <div class="modal-body">select*
+                                                                    <form action="{% url 'update_user_role' %}" method="POST">
+                                                                        <input type="hidden" name="user" value="{{user.phone}}">
+                                                                        <select class="form-select" aria-label="Default select example" name="user_type">
+                                                                            <option value="1" selected>Client</option>
+                                                                            <option value="2">Agent</option>
+                                                                            <option value="3">Admin</option>
+                                                                        </select>
+                                                                        {% csrf_token %}
+                                                                        <!-- <mwc-select class="w-100" outlined="" label="Role" name="role">
+                                                                            <mwc-list-item value="1" selected="" mwc-list-item="" tabindex="0"
+                                                                                aria-disabled="false" role="option" aria-selected="true">Client</mwc-list-item>
+                                                                            <mwc-list-item value="2" mwc-list-item="" tabindex="-1" aria-disabled="false"
+                                                                                role="option">Agent</mwc-list-item>
+                                                                            <mwc-list-item value="3" mwc-list-item="" tabindex="-1" aria-disabled="false"
+                                                                                role="option">Super Admin</mwc-list-item>
+                                                                        </mwc-select> -->
+                                                                    
+                                                                        <div class=" d-flex flex-row-reverse  ">
+                                                                            <button class="btn btn-text-primary me-2" type="button" data-bs-dismiss="modal">Cancel</button>
+                                                                            <button class="btn btn-text-primary" type="submit">Save</button>
+                                                                        </div>
+                                                                        
+                                                                    </form>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                    
+                                                        
+                                                    </div>
+                                                </div>
+                                                {% elif user.user_type == 2 %}
+                                                <td><span class="" title="click to update"  data-bs-toggle="modal" data-bs-target="#updateRoleAgent{{user.id}}">Agent</span></td>
+                                                 <!-- Modal-->
+                                                <div class="modal fade" id="updateRoleAgent{{user.id}}" tabindex="-1" aria-labelledby="exampleModalStaticLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+                                                    <div class="modal-dialog modal-dialog-centered">
+                                                    
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="exampleModalLabel">Change user role</h5>
+                                                                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                </div>
+                                                                <div class="modal-body">select*
+                                                                    <form action="{% url 'update_user_role' %}" method="POST">
+                                                                        <input type="hidden" name="user" value="{{user.phone}}">
+                                                                    
+                                                                        {% csrf_token %}
+                                                                        
+                                                                        <select class="form-select" aria-label="Default select example" name="user_type">
+                                                                            <option value="1" selected>Client</option>
+                                                                            <option value="2">Agent</option>
+                                                                            <option value="3">Admin</option>
+                                                                        </select>
+                                                                    
+                                                                        <div class=" d-flex flex-row-reverse  ">
+                                                                            <button class="btn btn-text-primary me-2" type="button" data-bs-dismiss="modal">Cancel</button>
+                                                                            <button class="btn btn-text-primary" type="submit">Save</button>
+                                                                        </div>
+                                                                        
+                                                                    </form>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                    
+                                                        
+                                                    </div>
+                                                </div>
+                                                {% elif user.user_type == 3 %}
+                                                <td><span class="" title="click to update"  data-bs-toggle="modal" data-bs-target="#updateRoleAdmin{{user.id}}">Admin</span></td>
+                                                 <!-- Modal-->
+                                                <div class="modal fade" id="updateRoleAdmin{{user.id}}" tabindex="-1" aria-labelledby="exampleModalStaticLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+                                                    <div class="modal-dialog modal-dialog-centered">
+                                                    
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="exampleModalLabel">Change user role</h5>
+                                                                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                </div>
+                                                                <div class="modal-body">select*
+                                                                    <form action="{% url 'update_user_role' %}" method="POST">
+                                                                        <input type="hidden" name="user" value="{{user.phone}}">
+                                                                    
+                                                                        {% csrf_token %}
+                                                                        <select class="form-select" aria-label="Default select example" name="user_type">
+                                                                            <option value="1" selected>Client</option>
+                                                                            <option value="2">Agent</option>
+                                                                            <option value="3">Admin</option>
+                                                                        </select>
+                                                                    
+                                                                        <div class=" d-flex flex-row-reverse  ">
+                                                                            <button class="btn btn-text-primary me-2" type="button" data-bs-dismiss="modal">Cancel</button>
+                                                                            <button class="btn btn-text-primary" type="submit">Save</button>
+                                                                        </div>
+                                                                        
+                                                                    </form>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                    
+                                                        
+                                                    </div>
+                                                </div>
+                                                {% else%}
+                                                <td><span class="">Not set</span></td>
+                                                {% endif %}
+                                                <td>{{user.date_joined|date:"SHORT_DATE_FORMAT"}}</td>
+                                                <td>{{user.last_login}}</td>
+    
+                                                <td>{{user.is_active}}</td>
+                                                {% if user.is_superuser == True %}
+                                                <td><span class="badge bg-success">{{user.is_superuser}}</span></td>
+                                                {% elif user.is_superuser == False %}
+                                                <td><span class="badge bg-danger">{{user.is_superuser}}</span></td>
+                                                {% else%}
+                                                <td><span class="badge bg-warning">Not set</span></td>
+                                                {% endif %}
+    
+                                                {% if user.is_staff == True %}
+                                                <td><span class="badge bg-success">{{user.is_staff}}</span></td>
+                                                {% elif user.is_staff == False %}
+                                                <td><span class="badge bg-danger">{{user.is_staff}}</span></td>
+                                                {% else%}
+                                                <td><span class="badge bg-warning">Not set</span></td>
+                                                {% endif %}
+    
+                                            </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                    
+                                </div>
+                                <div class="datatable-bottom">
+                                    <div class="datatable-info"></div>
+                                    <nav class="datatable-pagination">
+                                        {% if users.has_other_pages %}
+                                        <ul class="datatable-pagination-list">
+                                            {% if users.has_previous %}
+                                            <li><a href="?page={{ users.previous_page_number }}">&laquo;</a></li>
+                                            {% else %}
+                                            <li class="disabled"><span>&laquo;</span></li>
+                                            {% endif %}
+                                            {% for i in users.paginator.page_range %}
+                                            {% if users.number == i %}
+                                                <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+                                            {% else %}
+                                                <li><a href="?page={{ i }}">{{ i }}</a></li>
+                                            {% endif %}
+                                            {% endfor %}
+                                            {% if users.has_next %}
+                                            <li><a href="?page={{ users.next_page_number }}">&raquo;</a></li>
+                                            {% else %}
+                                            <li class="disabled"><span>&raquo;</span></li>
+                                            {% endif %}
+                                        </ul>
+                                        {% endif %}
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+                <!-- Checklist column-->
+    
+            </div>
+        
+    </div>
+</main>
+
+{% endblock %}
+{% block scripts %} 
+
+{% endblock %}

@@ -1,0 +1,91 @@
+<nav class="drawer accordion drawer-light bg-white"
+    id="drawerAccordion">
+    <div class="drawer-menu">
+        <div class="nav">
+
+            <!-- Drawer section heading (Interface)-->
+            <div class="drawer-menu-heading">Dashboard</div>
+            <!-- Drawer link (Overview)-->
+            <a class="nav-link mdc-ripple-upgraded active"
+                href="/">
+                <div class="nav-link-icon"><i
+                        class="material-icons">language</i></div>
+                Overview
+            </a>
+            <!-- Drawer link (Dashboards)-->
+            <a class="nav-link active mdc-ripple-upgraded"
+                href="javascript:void(0);"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseDashboards"
+                aria-expanded="false"
+                aria-controls="collapseDashboards">
+                <div class="nav-link-icon"><i
+                        class="material-icons">dashboard</i></div>
+                Manages
+                <div class="drawer-collapse-arrow"><i
+                        class="material-icons">expand_more</i></div>
+            </a>
+            <!-- Nested drawer nav (Dashboards)-->
+            <div class="collapse active" id="collapseDashboards"
+                aria-labelledby="headingOne"
+                data-bs-parent="#drawerAccordion">
+                <nav class="drawer-menu-nested nav">
+                    <a class="nav-link mdc-ripple-upgraded active"
+                        href="{% url 'sample_test' %}">Sapmle Tests</a>
+                 
+                    <a class="nav-link 
+                        mdc-ripple-upgraded"
+                        href="{% url 'farmers' %}">Farmers</a>
+                    <a class="nav-link mdc-ripple-upgraded " 
+                        href="{% url 'users' %}">Users</a>
+                    
+                </nav>
+            </div>
+            <!-- Drawer link (Layouts)-->
+            {% comment %} <a class="nav-link collapsed mdc-ripple-upgraded"
+                href="javascript:void(0);"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseLayouts"
+                aria-expanded="false"
+                aria-controls="collapseLayouts">
+                <div class="nav-link-icon"><i
+                        class="material-icons">view_compact</i></div>
+                Payments
+                <div class="drawer-collapse-arrow"><i
+                        class="material-icons">expand_more</i></div>
+            </a>
+            <div class="collapse" id="collapseLayouts"
+                aria-labelledby="headingOne"
+                data-bs-parent="#drawerAccordion">
+                <nav class="drawer-menu-nested nav">
+                    <!-- <a class="nav-link mdc-ripple-upgraded"
+                        href="">Make payments</a> -->
+                    <a class="nav-link mdc-ripple-upgraded "
+                        href="#">Payments Received </a>
+                    
+                </nav>
+            </div> {% endcomment %}
+
+            <a class="nav-link mdc-ripple-upgraded"
+                href="#">
+                <div class="nav-link-icon"><i
+                        class="material-icons">fact_check</i></div>
+                Reports
+            </a>
+            
+
+            
+           
+        </div>
+    </div>
+    <!-- Drawer footer        -->
+    <div class="drawer-footer border-top">
+        <div class="d-flex align-items-center">
+            <i class="material-icons text-muted">account_circle</i>
+            <div class="ms-3">
+                <div class="caption">Logged in as:</div>
+                <div class="small fw-500">Admin</div>
+            </div>
+        </div>
+    </div>
+</nav>
